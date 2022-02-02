@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-agregar',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class AgregarComponent implements OnInit {
-
-  constructor() { }
+  HeroeId:string="";
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(param => console.log(this.HeroeId= param.id));
   }
 
 }
