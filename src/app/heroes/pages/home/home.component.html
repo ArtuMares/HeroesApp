@@ -2,12 +2,11 @@
     <mat-sidenav #sidenav mode="push">
         <mat-toolbar color="primary">
             <span>Menu</span>
-            <span class="spacer" ></span>
-            <button mat-icon-button 
-                    (click)="sidenav.toggle()">
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-        </mat-toolbar>    
+        </mat-toolbar>
         <mat-nav-list>
             <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>label</mat-icon>
@@ -26,15 +25,17 @@
 
     <mat-toolbar>
 
-        <button mat-icon-button 
-                (click)="sidenav.toggle()">
+        <button mat-icon-button (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
-    <span class="spacer" ></span>
-        <button mat-button color="primary">
+
+        <span class="spacer"></span>
+
+        <span>{{auth.usuario}}</span>    
+        <button mat-button color="primary" (click)="logout()">
             Logout
         </button>
-    </mat-toolbar>    
+    </mat-toolbar>
 
     <div class="container">
         <router-outlet>
@@ -42,5 +43,3 @@
         </router-outlet>
     </div>
 </mat-sidenav-container>
-
-
